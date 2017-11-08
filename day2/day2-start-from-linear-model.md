@@ -15,14 +15,14 @@
 ## 依赖
 
 *  tensorflow
-* numpy
-* matplotlib
+*  numpy
+*  matplotlib
 
 这三个库都可以 pip install 是不是很开心？
 
 ## Quick Start
 
-![7D885F5F-0EB2-46FE-A9FF-6EEC826821EB](imgs/7D885F5F-0EB2-46FE-A9FF-6EEC826821EB.png)
+![7D885F5F-0EB2-46FE-A9FF-6EEC826821EB](../imgs/7D885F5F-0EB2-46FE-A9FF-6EEC826821EB.png)
 
 这个图表示我们如果要使用炼丹大法做某一个事情的事，需要经历的步骤。那么我们进行 Quick Look 实验的时候，就可以快一点跑起来再说，我们先要一个滑板吧，有钱了再改成自行车。
 
