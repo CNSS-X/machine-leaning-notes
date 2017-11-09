@@ -82,3 +82,9 @@ for i in range(1000):
 
 print('w_value: {} b_value: {} cost: {}'.format(session.run(w), session.run(b), session.run(cost, feed)))
 ```
+
+## LDA 
+
+http://blog.csdn.net/aliceyangxi1987/article/details/75007855
+
+这里是翻译的讲 LDA 不错的一篇文章，具体的计算步骤我们不打算进行计算了。
