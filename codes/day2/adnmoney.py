@@ -6,13 +6,13 @@
   Created: 11/07/17
 """
 
-import tensorflow
-import numpy
+import tensorflow as tf
+import numpy as np
 
 
 # prepare your data set
-money = numpy.array([[109],[82],[99], [72], [87], [78], [86], [84], [94], [57]]).astype(numpy.float32)
-click = numpy.array([[11], [8], [8], [6],[ 7], [7], [7], [8], [9], [5]]).astype(numpy.float32)
+money = np.array([[109],[82],[99], [72], [87], [78], [86], [84], [94], [57]]).astype(np.float32)
+click = np.array([ [11], [8], [8],  [6],  [7],  [7],  [7],  [8],  [9],  [5]]).astype(np.float32)
 
 # well, divide our data set into testing data and training data
 X_test = money[0:5].reshape(-1,1)
@@ -23,27 +23,27 @@ y_train = click[5:]
 
 
 #
-# build our model using tensorflow
+# build our model using tf
 #
-# tensorflow setting placeholder
-placeholder_x = tensorflow.placeholder(tensorflow.float32, [None, 1])
-w = tensorflow.Variable(initial_value=tensorflow.zeros([1,1]))
+# tf setting placeholder
+placeholder_x = tf.placeholder(tf.float32, [None, 1])
+w = tf.Variable(initial_value=tf.zeros([1,1]))
 W = w
-b = tensorflow.Variable(initial_value=tensorflow.zeros([1]))
+b = tf.Variable(initial_value=tf.zeros([1]))
 
-y = tensorflow.matmul(placeholder_x, w) + b
+y = tf.matmul(placeholder_x, w) + b
 
-placeholder_y = tensorflow.placeholder(tensorflow.float32, [None, 1])
+placeholder_y = tf.placeholder(tf.float32, [None, 1])
 
-cost = tensorflow.reduce_sum(tensorflow.pow(placeholder_y - y, 2)) # (yi - f(xi))^2
-train_step = tensorflow.train.GradientDescentOptimizer(0.000001).minimize(cost)
+cost = tf.reduce_sum(tf.pow(placeholder_y - y, 2)) # (yi - f(xi))^2
+train_step = tf.train.GradientDescentOptimizer(0.000001).minimize(cost)
 
 #
 # startup model
 #
-init = tensorflow.global_variables_initializer()
+init = tf.global_variables_initializer()
 
-session = tensorflow.Session()
+session = tf.Session()
 session.run(init)
 sess = session
 cost_history = []
